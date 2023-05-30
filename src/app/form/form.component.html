@@ -1,0 +1,11 @@
+<form >
+    <div>
+      <label>Title:</label>
+      <input type="text"
+       #title
+       name="title" required>
+    </div>
+    <br />
+    <button (onclick)="addItem(title.value)">Add Item</button>
+</form>
+  

@@ -1,0 +1,84 @@
+li {
+
+    margin-bottom: 13px;
+    list-style-type: none;
+    -webkit-box-shadow: 5px 5px 40px -2px rgba(0, 0, 0, 0.04);
+    box-shadow: 5px 5px 40px -2px rgba(0, 0, 0, 0.04);
+    border: 0.4px solid rgba(0, 0, 0, 0.04);
+    padding: 5px;
+    display: flex;
+
+
+}
+
+ul {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.titles {
+    
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+}
+
+.card-content {
+    width: 30em;
+    margin: auto;
+}
+
+.card {
+    width: 33em;
+}
+
+span {
+    font-size: 16px;
+    width: 500px;
+}
+
+.div {
+
+    margin: auto;
+    width: max-content;
+    padding: 1em;
+
+}
+
+.input-btn {
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.input {
+    margin-left: 10px
+}
+
+.btn {
+    border: 1px solid rgb(78, 78, 232);
+    background-color: rgb(78, 78, 232);
+    width: 80px;
+    color:white;
+    height: 40px;
+}
+.addBtn{
+    background-color: orangered;
+    border: 1px solid orangered;
+    width: 100px;
+    border-radius: 5px ;
+    padding:5px;
+    color :white
+}
+.btn:nth-child(2){
+    background-color: tomato;
+    border: 1px solid tomato;
+    margin-left: 5px
+    
+}
+.addBtn:hover{
+    background-color: rgb(233, 65, 4);
+}
+.btn-wrapper{
+    display: flex;
+}

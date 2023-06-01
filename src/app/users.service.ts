@@ -13,5 +13,8 @@ export class UsersService {
   public loadUsers() {
     return this.httpClient.get<any>(this.apiUrl);
   }
+  public getActiveUser(id : number){
+    return this.httpClient.get(`${this.apiUrl}/${id}`)
+  }
 
 }

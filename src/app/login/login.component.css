@@ -28,3 +28,10 @@ label{
 #btn{
 width: 250px;
 }
+#error-message{
+    color: tomato;
+    margin: auto;
+}
+.login-error{
+    text-align: center;
+}

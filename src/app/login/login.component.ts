@@ -17,6 +17,8 @@ export class LoginComponent {
   public dataList$: any[] = [];
   public content: any[] = []
   public incoming: any[] = []
+  public message: string = ''
+
   constructor(public data: UsersService, public todo: ToDoService, public router: Router) { }
 
   ngOnInit() {
@@ -24,16 +26,18 @@ export class LoginComponent {
       this.userList$ = data
     })
   }
+  
   public handleLogin() {
     const foundUser = this.userList$.find(user => user.username === this.username)
     if (foundUser) {
       this.getUserTodo(foundUser)
     }
     else {
-      const message = document.getElementById('error-message')
-    
-
+      this.message = 'User not found' 
     }
+  }
+  public onKey(){
+     this.message = ' ' 
   }
   public getUserTodo(user :any){
     this.todo.getList(user.id).subscribe((res:any)=>{

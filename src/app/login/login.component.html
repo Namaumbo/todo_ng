@@ -10,8 +10,8 @@
             <br/>
             <input   [(ngModel)]="username"  type="email" class="form-control" id="inputEmai3">
             <br/>
-            <button (click)="handleLogin()" type="button" class="btn btn-primary" id="btn" >log in</button>
+            <button (click)="handleLogin()" (keyup)="onKey()" type="button" class="btn btn-primary" id="btn" >log in</button>
     </div>
-    <div id="error-message" ></div>
+    <div class="login-error"><span id="error-message">{{message}}</span></div>
 
 </div>

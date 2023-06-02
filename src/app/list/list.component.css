@@ -58,9 +58,11 @@ span {
 .btn {
     border: 1px solid rgb(78, 78, 232);
     background-color: rgb(78, 78, 232);
-    width: 80px;
+    width: 65px;
     color:white;
-    height: 40px;
+    height: 30px;
+    font-size: 13px;
+    margin: 3px;
 }
 .addBtn{
     background-color: orangered;
@@ -83,5 +85,12 @@ span {
     display: flex;
 }
 .totalnumber{
-   
+   text-align: center;
+}
+.totalnumber span:nth-child(2){
+margin-left: 10px;
+margin-right: 10px;
+}
+.completed{
+    text-decoration: line-through;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../users.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +11,10 @@ export class NavbarComponent {
   userObject: any = ''
   userId: any = ''
   intUserId: number = 0
-  constructor(public user: UsersService, public params: ActivatedRoute) {
+  currentUrl : string = ''
+  constructor(public user: UsersService, public params: ActivatedRoute,private router:Router) {
+
+    // router.events.subscribe((_:NavigationEnd)=>this.currentUrl = _.url)
   }
 
   ngOnInit() {

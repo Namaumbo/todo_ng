@@ -15,7 +15,12 @@ export class ListComponent {
   public id: any = ''
   public response: any
   intId: number = 0
-  totalNumber: any;
+  totalNumber: number = 0;
+  totalNumberUncompleted : number = 0
+  totalNumberCompleted : Number = 0
+
+  completedItems : any[] = [];
+  uncompletedItems : any[] = [];
 
 
   //  injection
@@ -67,16 +72,26 @@ export class ListComponent {
       })
      
   }
+  public loadTodolist() {
+    this.todoList$ = this.data.getData()
+    this.todoList$.forEach(element => {
+      if(element.completed){
+          this.completedItems.push(element)
+      }else{
+        this.uncompletedItems.push(element)
+      }
+    });
+    this.totalNumberCompleted = this.completedItems.length
+    this.totalNumberUncompleted = this.uncompletedItems.length
+    this.totalNumber = this.todoList$.length
+  }
   ngOnInit() {
     setTimeout(() => {
       this.loadTodolist()
     }, 1000)
 
   }
-  public loadTodolist() {
-    this.todoList$ = this.data.getData()
-    this.totalNumber = this.todoList$.length
-  }
+
 
 
 }

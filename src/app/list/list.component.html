@@ -1,29 +1,36 @@
 <app-navbar></app-navbar>
 
 <div class="div">
-   <div class="input-btn">
-    <button type="button" class="btn btn-secondary" (click)="handleAddTodo()">Add item</button>
-    <input   [(ngModel)]="todo" type="text" class="form-control" id="inputEmai3">
+  <div class="input-btn">
+    <button type="button" class="btn btn-secondary" (click)="handleAddTodo()">
+      Add
+    </button>
+    <input
+      [(ngModel)]="todo"
+      type="text"
+      class="form-control"
+      id="inputEmai3"
+    />
   </div>
-     <div class="card">
-        <div class="card-content">
-            <div class="totalnumber">
-                <span>total:{{totalNumber}}</span>
-            </div>
-        <ul>
-            <li *ngFor="let item of todoList$">
-               
+  <div class="card">
+    <div class="card-content">
+      <div class="totalnumber">
+        <span><b>total</b>:{{ totalNumber }}</span>
+        <span><b>completed</b>:{{ totalNumberCompleted }}</span>
+        <span><b>uncompleted</b>:{{ totalNumberUncompleted }}</span>
+      </div>
+      <ul>
+        <li *ngFor="let item of todoList$">
+          <div class="titles">
+            <span [ngClass]="{ completed: item.completed }">
+              {{ item.title }}</span
+            >
+          </div>
 
-                <!-- <div class="titles">
-                    <span [ngClass]="{ completed: !item.completed }"> {{item.title}}</span>
-                </div> -->
-
-                <button (click)="handleComplete(item.id)" class="btn">done</button>
-                <button (click)="handleDelete(item.id)" class="btn">delete</button>
-            </li>
-        </ul>
+          <button (click)="handleComplete(item.id)" class="btn">done</button>
+          <button (click)="handleDelete(item.id)" class="btn">delete</button>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>
-   
-</div>
-

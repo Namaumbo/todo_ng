@@ -31,6 +31,7 @@ export class LoginComponent {
     const foundUser = this.userList$.find(user => user.username === this.username)
     if (foundUser) {
       this.getUserTodo(foundUser)
+      this.data.setUser(foundUser)
     }
     else {
       this.message = 'User not found' 

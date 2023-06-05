@@ -17,10 +17,10 @@ export class ListComponent {
   intId: number = 0
   totalNumber: number = 0;
   totalNumberUncompleted : number = 0
-  totalNumberCompleted : Number = 0
+  totalNumberCompleted : number = 0
 
   completedItems : any[] = [];
-  uncompletedItems : any[] = [];
+  public uncompletedItems : any[] = [];
 
 
   //  injection
@@ -44,11 +44,11 @@ export class ListComponent {
           alert('item added')
           this.todoList$.unshift(this.itemInterface)
           this.totalNumber = this.todoList$.length
+          // this.totalNumberCompleted = this.completedItems.length
+          
         }
       })
     }
-
-
   }
   // handle complete item
   public handleComplete(todo: any) {
@@ -69,6 +69,8 @@ export class ListComponent {
         this.todoList$ = this.todoList$.filter((todo: any) => todo.id !== id);
         if (this.todoList$)  alert('item successfully deleted')
         this.totalNumber = this.todoList$.length
+        this.totalNumberCompleted = this.completedItems.length
+
       })
      
   }
@@ -76,6 +78,7 @@ export class ListComponent {
     this.todoList$ = this.data.getData()
     this.todoList$.forEach(element => {
       if(element.completed){
+        
           this.completedItems.push(element)
       }else{
         this.uncompletedItems.push(element)

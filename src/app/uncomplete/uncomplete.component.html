@@ -1,1 +1,15 @@
-<p>uncomplete works!</p>
+<app-navbar></app-navbar>
+
+<ul *ngFor="let item of allToDoItems">
+  <li *ngIf="!item.completed">
+    <div class="card">
+      <div class="card-content">
+        <div class="titles">
+          <span>
+            {{ item.title }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

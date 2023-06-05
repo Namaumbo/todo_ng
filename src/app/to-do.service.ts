@@ -42,8 +42,6 @@ export class ToDoService {
   }
 
 public addItem(toDo : items ){
-  // let params = HttpRequest.p
-
   return this.httpRequest.post(`${this.apiUrl}`,toDo)
 
 }

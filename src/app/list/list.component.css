@@ -72,7 +72,7 @@ span {
     padding:5px;
     color :white
 }
-.btn:nth-child(2){
+.btn:nth-child(3){
     background-color: tomato;
     border: 1px solid tomato;
     margin-left: 5px
